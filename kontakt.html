@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pivnica</title>
+
+    <!-- link za font  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css fajl link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header  -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt=""><!-- logo -->
+    </a>
+<!-- pocetna, o nama, nasa piva, kontakt  -->
+    <nav class="navbar">
+        <a href="index.html">početna</a>
+        <a href="onama.html">o nama</a>
+        <a href="meni.html">meni</a>
+        <a href="kontakt.html">kontakt</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="pretraži...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+
+</header>
+
+<!-- kraj headera  -->
+
+
+
+
+<!-- kontakt sekcija početak  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>kontaktirajte</span> nas </h1>
+
+    <div class="row">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22015.95547976942!2d20.46817320823421!3d44.76787957712081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a70576248bf79%3A0xadaf5cff042d3bd0!2sFaculty%20of%20Organizational%20Sciences!5e0!3m2!1sen!2srs!4v1640020403634!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<!-- kod je genericki prekopiran sa google mapsa izabere se zeljena lokacija zatim se ide na share i ode se zatim na embed a map gde se ikopiral linija koda koju izbaci google maps i ubaci se u html dokument  -->
+         <div id="errorMessage"></div>
+         <form id="form" action="kontakt.html" method="get">
+            <h3>kontakt</h3>
+            <div class="inputBox">
+                <input id="name" type="text" placeholder="ime i prezime" required>
+            </div>
+            <div class="inputBox">
+                <input id="email" type="email" placeholder="email" required><!-- posto smo stavili da je tip email genercki zahteva da se stavi znak @ i da stoji jos nesto iza toga tj. proverava da li je unet mail-->
+            </div>
+            <div class="inputBox">
+                <textarea id="message" placeholder="poruka..." required></textarea>
+            </div>
+            <button id="submit" type="submit" class="btn" >pošalji</button>
+            <button  class="btn" id="datum" type="button" onclick="displayDate()">Današnji datum</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- kontakt sekcija kraj -->
+
+
+
+
+
+<!-- footer sekcija pocetak  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt=""><!-- logo -->
+            </a>
+            <div class="share">
+                <a href="https://www.facebook.com/elaboffice" class="fab fa-facebook-f"></a>
+                <a href="https://www.instagram.com/elab_office/" class="fab fa-instagram"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>kontakti</h3>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> +381641234567 </a>
+            <a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="links"> <i class="fas fa-envelope"></i> pivnica@gmail.com </a>
+            <a href="https://www.google.com/maps/place/Jove+Ili%C4%87a+154,+Beograd+11000/@44.7727108,20.4728464,17z/data=!3m1!4b1!4m5!3m4!1s0x475a705762332ab5:0x422a527f1ff25cac!8m2!3d44.7727108!4d20.4750351" class="links"> <i class="fas fa-map-marker-alt"></i> Jove Ilića 154,11010 Beograd, Srbija </a>
+        </div>
+
+        <div class="box">
+            <h3>linkovi ka stranicama</h3>
+            <a href="index.html" class="links"> <i class="fas fa-arrow-right"></i> početna </a>
+            <a href="onama.html" class="links"> <i class="fas fa-arrow-right"></i> o nama </a>
+            <a href="meni.html" class="links"> <i class="fas fa-arrow-right"></i> meni </a>
+            <a href="kontakt.html" class="links"> <i class="fas fa-arrow-right"></i> kontakt </a>
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- js fajl link  -->
+<script src="js/script.js"></script>
+<script>
+    var form=document.getElementById('form')
+    form.addEventListener('submit', function(event){
+        event.preventDefault()//sprecava autosubmit
+        var username=document.getElementById('name').value
+        console.log(username)
+        var email=document.getElementById('email').value
+        console.log(email)
+        var message=document.getElementById("message").value
+        console.log(message)
+    })
+</script>
+</body>
+</html>
